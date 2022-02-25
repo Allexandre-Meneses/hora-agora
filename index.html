@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Hora do Dia</h1>
+    </header>
+    <body>
+        <section>
+            <div id="hora"></div>
+            <div id="imagem"></div>
+        </section>
+    </body>
+    <footer>
+        <a href="https://github.com/Allexandre-Meneses" id="mylink">Allexandre Meneses</a>
+    </footer>
+    <script>
+
+            function horaAtual() {
+
+            var agora = new Date()
+            var hora = agora.getHours()
+            var minutos = agora.getMinutes()
+            var segundos = agora.getSeconds()
+            var horas = `${hora}:${minutos}`
+
+            mostraImagem(hora)    
+            window.document.querySelector('div#hora').innerText = horas
+
+            }
+            
+            function mostraImagem(hora) {
+                var mostrafoto = window.document.getElementById('imagem')
+                if (hora > 0 && hora < 6) {
+                    mostrafoto.innerHTML = '<img src="./images/boamadrugada.png" alt="Boa Madrugada">'
+                } else
+                if (hora <= 12) {
+                    mostrafoto.innerHTML = '<img src="./images/bomdia.png" alt="Bom Dia">'
+                } else
+                if (hora <= 18 ) {
+                    mostrafoto.innerHTML = '<img src="./images/boatarde.png" alt="Boa Tarde">'
+                } else
+                if (hora > 18) {
+                    mostrafoto.innerHTML = '<img src="./images/boanoite.png" alt="Boa Noite">'
+                    temaEscuro()
+                }
+            }
+
+            function temaEscuro() {
+                window.document.getElementById('titulo').style.color = 'white'
+                window.document.body.style.background = '#16232E'
+                window.document.getElementById('mylink').style.color = 'white'
+            }
+
+            var tempo = setInterval(horaAtual, 1000)
+    </script>
+</body>
+</html>

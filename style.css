@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+:root {
+    --cor0: #16232E;
+    --cor1: #164C45;
+    --cor2: #CC8D1A;
+    --cor3: #e5d493;
+    --cor4:#BDA523;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+   background-color: var(--cor3); 
+}
+
+header {
+    text-align: center;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+section {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+section > div#hora {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer > a {
+    text-decoration: none;
+    font-family: Arial;
+    color: black;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
